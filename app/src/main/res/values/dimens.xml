@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="scale_10dp" > 10dp </dimen>
+    <dimen name="scale_1dp" >1dp </dimen>
+    <dimen name="scale_40dp" >40dp </dimen>
+    <dimen name="scale_95dp" >95dp </dimen>
+    <dimen name="scale_90dp" >90dp </dimen>
+    <dimen name="txt_12sp" >12dp </dimen>
+    <dimen name="scale_5dp" >5dp </dimen>
+</resources>
