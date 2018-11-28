@@ -26,11 +26,11 @@ public class DragShadowBuilder extends View.DragShadowBuilder {
         final View view = mView;
     /* give drag shadow a GRAY background, this also changes the drag-start view
     attached to the screen */
-//        view.setBackground(mContext.getResources().getDrawable(R.drawable.dotted_border));
-        view.setBackgroundColor(mContext.getResources().getColor(R.color.darkGray));
+        view.setBackground(mContext.getResources().getDrawable(R.drawable.dotted_border));
+//        view.setBackgroundColor(mContext.getResources().getColor(R.color.darkGray));
         view.draw(canvas);
         /* bring the drag-start view back to its original state (does not affect drag-shadow) */
-        view.setBackgroundColor(Color.WHITE);
+        view.setBackgroundColor(mContext.getResources().getColor(R.color.white));
 
     }
 

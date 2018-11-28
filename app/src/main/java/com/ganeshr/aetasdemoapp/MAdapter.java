@@ -5,7 +5,6 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -69,28 +68,14 @@ public class MAdapter extends RecyclerView.Adapter<MAdapter.MViewHolder> impleme
             }
         });
 
-//        mViewHolder.rowParentLayout.setOnDragListener(this);
 
-//     mViewHolder.imgDragView.setOnTouchListener(new View.OnTouchListener() {
-//         @Override
-//         public boolean onTouch(View view, MotionEvent event) {
-//             clipData(mViewHolder.rowParentLayout, position);
-//             return true;
-//         }
-//     });
-
-
-//
-//         mViewHolder.imgDragView.setOnTouchListener(new View.OnTouchListener() {
-//             @Override
-//             public boolean onTouch(View view, MotionEvent event) {
-//                     mDragStartListener.onStartDrag(mViewHolder);
-//                 return false;
-//
-////                 clipData(mViewHolder.rowParentLayout, position);
-////                 return true;
-//             }
-//         });
+         mViewHolder.imgDragView.setOnTouchListener(new View.OnTouchListener() {
+             @Override
+             public boolean onTouch(View view, MotionEvent event) {
+                     mDragStartListener.onStartDrag(mViewHolder);
+                 return false;
+             }
+         });
 
     }
 

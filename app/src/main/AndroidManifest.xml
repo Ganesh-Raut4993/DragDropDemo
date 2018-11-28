@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity  android:icon="@mipmap/ic_launcher"
-            android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:label="Drag and Drop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
