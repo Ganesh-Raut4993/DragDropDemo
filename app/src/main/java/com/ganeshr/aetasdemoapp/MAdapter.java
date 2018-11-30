@@ -2,6 +2,7 @@ package com.ganeshr.aetasdemoapp;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.graphics.Point;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -27,6 +28,8 @@ public class MAdapter extends RecyclerView.Adapter<MAdapter.MViewHolder> impleme
     int  dragItemPosition;
     AndroidVersions darggedItem;
     private final OnStartDragListener mDragStartListener;
+
+    Point touchPoints;
 
     interface getIndex {
         void getItemIndex(AndroidVersions obj, int position);
@@ -77,12 +80,28 @@ public class MAdapter extends RecyclerView.Adapter<MAdapter.MViewHolder> impleme
              }
          });
 
+
+
+        mViewHolder.rowParentLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+
+                touchPoints = new Point();
+                touchPoints.x =  (int)event.getX();
+                touchPoints.y = (int)event.getY();
+                return false;
+            }
+        });
+
+
+
+
     }
 
     private void clipData(View view, int position){
         ClipData data = ClipData.newPlainText("", "");
 //        View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-        view.startDrag(data, new DragShadowBuilder(view, mContext), view,  0);
+        view.startDrag(data, new DragShadowBuilder(view, mContext,touchPoints), view,  0);
         view.setVisibility(View.VISIBLE);
         listener.getItemIndex(versionsArrayList.get(position), position);
     }
